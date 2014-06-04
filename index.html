@@ -212,14 +212,15 @@
 <script type="text/javascript">
 $(document).ready(function(){
  
-$('#submit').click(function(){
+  $('#submit').click(function(){
  
-$.post("send.php", $("#mycontactform").serialize(),  function(data) {   });
+    $.post("send.php", $("#mycontactform").serialize(), function(response) {   
  
-$('#success').html('Message sent!');
-$('#success').hide(2000);
- 
-});
- 
+      $('#success').html(response);
+      $('#success').hide(2000);
+    });
+    return false;
+  });
+  
 });
 </script>
