@@ -203,6 +203,11 @@
 				display: block;
 				width: 100%;
 			}
+      
+      .image.rounded
+      {
+        border-radius: 300px;
+      }
 			
 			.image.featured
 			{
