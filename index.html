@@ -169,7 +169,7 @@
 
 							<p>You can find me on <strong><a href='http://twitter.com/fkotsian'>Twitter</a></strong>, <strong><a href='http://linkedin.com/in/fkotsian'>LinkedIn</a></strong>, and around the Interwebs <strong><a href='http://github.com/fkotsian'>@fkotsian</a></strong>, or get directly to my email below.</p>
 							
-							<form method="post" action="#">
+							<form method="post" action="">
 								<div class="row half">
 									<div class="6u"><input type="text" class="text" name="name" placeholder="Name" /></div>
 									<div class="6u"><input type="text" class="text" name="email" placeholder="Email" /></div>
@@ -181,8 +181,10 @@
 								</div>
 								<div class="row">
 									<div class="12u">
-										<a href="#" class="button submit">Get In My Inbox</a>
+                    <input type='submit' class="button submit" placeholder='Get In My Inbox' />
 									</div>
+                  <div id='success' style='color: red;'>
+                  </div>
 								</div>
 							</form>
 
@@ -206,3 +208,18 @@
 
 	</body>
 </html>
+
+<script type="text/javascript">
+$(document).ready(function(){
+ 
+$('#submit').click(function(){
+ 
+$.post("send.php", $("#mycontactform").serialize(),  function(data) {   });
+ 
+$('#success').html('Message sent!');
+$('#success').hide(2000);
+ 
+});
+ 
+});
+</script>
